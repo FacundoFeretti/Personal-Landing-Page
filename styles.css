@@ -1,0 +1,289 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Esto mantiene ancho y alto a pesar de padding y border*/
+    font-family: 'Roboto', monospace;
+    list-style: none; /* Quita puntos y decoracion de las listas */ 
+    text-decoration: none; /* Para que links no traigan subrayado */
+    color: white;
+}
+
+body {
+    background-color: black; /* TO DO. Borrar cuando tenga el fondo final */
+
+}
+
+header {
+    position: fixed; /* Hace que el header se quede fijo en la posicion superior */
+    right: 0;
+    top: 0;
+    z-index: 100; /* Hace que el header se muestre por encima */
+    width: 100%;
+    display: flex; /* Esto hara que se acomoden los elementos en linea */
+    align-items: center; /* Centra verticalmente */
+    justify-content: space-between; /* Los elementos se separan */ 
+    padding: 15px 3%;
+    background-color: transparent;
+}
+
+.logo{
+    font-size: 30px;
+    font-weight: 900; /* Grueso de la letra */
+
+}
+
+.navList {
+    display: flex;
+
+}
+
+.navList a {
+    margin-left: 60px;
+    font-size: 15px;
+    font-weight: 600;
+    border-bottom: 2px solid transparent;
+    transition: all 0.6s ease; /* Esto es para animar todas las caracteristicas de los a de navlist */
+}
+
+.navList a:hover{
+    border-bottom: 2px solid white;
+}
+
+#menu-icon{
+    color: white; 
+    font-size: 35px;
+    z-index: 101;
+    cursor: pointer;   
+}
+
+#menu-toggle{
+    display: none;
+}
+
+.menu-icon-action{
+     display: none; 
+}
+
+.hero{
+    height: 100%;
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(245.59deg, #31494e 0%, #385e70 25%, #131313 75%); /*Fondo de gradiente*/
+    position: relative; /*Relativo al contenedor, permite usar bottom left y right top */
+    display: grid; /*Para que el hero se divida en dos columnas */
+    grid-template-columns: 1fr 1fr; /* 2 columnas */
+    align-items: center; /*Para alinear verticalmente el hero */
+    justify-items: center; /*Propiedad que agregue yo para centrar horizontalmennte */
+    gap: 2rem; /* Para que haya espacio de 2 rem entre la dos columnas */
+}
+
+.section{
+    padding: 0 8%;
+}
+
+.hero-img img{
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: solid #39516e 8px;
+    transition: height 2s linear, width 2s linear, opacity 2s linear; /*esto hace que la transicion sea lineal */
+}
+
+.hero-img img:hover {
+    width: 550px;
+    height: 550px;
+    opacity: 0.6;
+}
+
+.hero-text h5{
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 25px;
+}
+.hero-text h4{
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+.hero-text h1{
+    font-family: 'Roboto', monospace;  
+    font-size: 50px;
+    line-height: 1;
+    margin: 0 0 30px;
+}
+
+.hero-text p {
+    font-size: 80%;
+    margin-bottom: 50px;
+    line-height: 1.9;
+}
+
+.hero-text a{
+    display: inline-block;
+    background-color: #4d4d4d;
+    border: 1px solid transparent;
+    padding: 15px 30px;
+    line-height: 1.4;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 30px;
+    text-transform: uppercase;
+    transition: all .5s ease;    
+}
+
+.hero-text a:hover{
+    background-color: transparent;
+    border: 1px solid white;
+    transform: translateX(8px);
+}
+
+.hero-text .github{
+    margin-left: 20px;
+}
+
+.hero-text .github i{
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+.icons{
+    position: absolute;
+    top: 50vh;
+    padding: 0 3%;
+    transform: translateY(-50%);
+}
+
+.icons i {
+    display: block;
+    margin: 26px 0;
+    font-size: 30px;
+    transition: all .5s ease;
+}
+
+.icons i:hover{
+    color: #4d4d4d;
+    transform: translateY(-6px);
+}
+
+.scroll-down{
+    position: absolute;
+    bottom: 6%;
+    right: 3%;
+}
+
+.scroll-down i{
+    display: block;
+    padding: 12px;
+    font-size: 30px;
+    background-color: #21383d;
+    border-radius: 30px;
+    transition: all .5s ease;
+}
+
+.scroll-down i:hover{
+    transform: translateY(-8px);
+}
+
+/* Media queries para hacer responsive la web */ 
+
+@media (max-width:992px){
+
+    section{
+        padding: 0 3%;
+        transition: .2s;
+    }
+
+    .hero-text{
+        padding-top: 0px;
+    }
+
+    .hero-img{
+        text-align: center;
+    }
+
+    .hero-img img {
+        width: 400px;
+        height: 400px;
+    }
+
+    .hero-img img:hover {
+        width: 450px;
+        height: 450px;
+    }
+
+    .hero-text p {
+        font-size: 70%;
+    }
+
+    .scroll-down{
+        display: none;
+    }
+
+    .icons{
+        position: absolute;
+        top: 95vh;
+        right: 0;
+        display: flex;
+        height: 40px;
+        width: 200px;
+        justify-content: space-between;
+    }
+
+    .icons i {
+        display: block;
+        font-size: 30px;
+        transition: all .5s ease;
+        margin: 0;
+    }
+
+}
+
+@media (max-width: 768px){
+
+    .menu-icon-action{
+        display: block;
+    }
+
+    #menu-icon{
+        display: block;
+    }
+
+    .hero-text{
+        text-align: center;
+    }
+
+    .hero{
+        padding-top: 100px;
+        height: 100%;
+        gap: 1rem;
+        grid-template-columns: 1fr;
+    }
+
+    .navList{
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        width: 200px;
+        height: 180px;
+        background-color: #042210ef;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 30px 20px;
+        transition: all 0.6s ease-out;
+    }
+
+    .navList a {
+        display: block;
+        margin: 7px 0;
+    }
+
+    #menu-toggle:checked + label.menu-icon-action + ul{
+        right: 0;
+    }
+
+    
+}
+
